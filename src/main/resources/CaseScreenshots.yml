@@ -1,0 +1,10 @@
+DefaultAddressUnableToGetStarted:
+  - after click get start
+  - default address displayed
+  - location page
+MealDetailNutritionInfo:
+  - Nutrition And Allergy Displayed
+  - restaurant detail page
+MissNumberAddressAddInstructionGetStarted:
+  - empty instruction unable to continue
+  - instruction added

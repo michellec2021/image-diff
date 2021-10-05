@@ -1,0 +1,35 @@
+.DS_Store
+
+# Intellij Configuration Files
+*.idea
+*.iml
+/.gradle
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Build Files
+/build
+/out
+**/src/dev/*
+/result
+/allure-results
+
+# Package Files #
+/classes/
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+azure.properties
+
+# Frontend Files
+build/
+node_modules
+coverage/
+.module-cache
