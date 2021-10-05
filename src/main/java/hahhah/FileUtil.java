@@ -66,7 +66,7 @@ public final class FileUtil {
     // TODO: 2021/9/28 改成从yml里面读取
     public static Map<String, List<String>> getCaseScreenshotsMap() {
         String caseName1 = "DefaultAddressUnableToGetStarted";
-        List<String> testPages1 = Lists.newArrayList("after click get start", "location page");
+        List<String> testPages1 = Lists.newArrayList("after click get start", "location page","unservedAreaHopup", "welcome page");
 
         String caseName2 = "MealDetailNutritionInfo";
         List<String> testPages2 = Lists.newArrayList("Nutrition And Allergy Displayed",
@@ -88,9 +88,6 @@ public final class FileUtil {
 
         String caseName7 = "RestaurantFullScreenshotWithShopCartEmpty";
         List<String> testPages7 = Lists.newArrayList("restaurant full screenshot without item[0]", "restaurant full screenshot without item[9]");
-
-        String caseName8 = "DefaultAddressUnableToGetStarted";
-        List<String> testPages8 = Lists.newArrayList("unservedAreaHopup", "welcome page");
 
         String caseName9 = "HomePageFullScreenshotWithItems";
         List<String> testPages9 = Lists.newArrayList("home page full screenshot with item[0]");
@@ -122,7 +119,6 @@ public final class FileUtil {
         casePicsMap.put(caseName5, testPages5);
         casePicsMap.put(caseName6, testPages6);
         casePicsMap.put(caseName7, testPages7);
-        casePicsMap.put(caseName8, testPages8);
         casePicsMap.put(caseName9, testPages9);
         casePicsMap.put(caseName10, testPages10);
         casePicsMap.put(caseName11, testPages11);

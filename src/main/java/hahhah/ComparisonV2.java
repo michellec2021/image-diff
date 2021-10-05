@@ -69,7 +69,6 @@ public class ComparisonV2 {
             for (String caseName : casePicsMap.keySet()) {
                 List<String> testPages = casePicsMap.get(caseName);
                 String expectedPath = String.format(reportRoot + baseVersion + "/%s/allure_results/%s/%s", deviceName, deviceName, caseName);
-//            String baseDyPath = String.format(reportRoot + "/1.48.0/%s/base_screenshots", deviceName);
                 String actualPath = String.format(reportRoot + "%s/%s/allure_results/%s/%s", testVersion, deviceName, deviceName, caseName);
                 testPages.forEach(testPage -> {
                     PdfUtil.addTextCell(table, testPage);
@@ -91,10 +90,16 @@ public class ComparisonV2 {
             excludeRectangles = Lists.newArrayList();
             String baseFilePath = FileUtil.getFileByName(filePath, testPage).getPath();
             BufferedImage expectedImage = ImageComparisonUtil.readImageFromResources(baseFilePath);
-            if (deviceName.contains("Samsung")) {
+            if (deviceName.contains("Samsung")||deviceName.contains("Google")) {
                 int buttonHeight = (int) (expectedImage.getHeight() * 0.05);
                 Rectangle bottomRectangle = new Rectangle(0, expectedImage.getHeight() - buttonHeight, expectedImage.getWidth(), expectedImage.getHeight());
                 excludeRectangles.add(bottomRectangle);
+            }
+            //special devices
+            if (deviceName.contains("Samsung")) {
+                int rightWidth = (int) (expectedImage.getWidth() * 0.015);
+                Rectangle rightRectangle = new Rectangle(expectedImage.getWidth()-rightWidth, 0, expectedImage.getWidth(), expectedImage.getHeight());
+                excludeRectangles.add(rightRectangle);
             }
             // TODO: 2021/9/29 if the page is restaurant_detail or other special image, add exclude path
             //w-width,h-height
